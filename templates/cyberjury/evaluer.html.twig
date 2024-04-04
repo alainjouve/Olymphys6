@@ -24,7 +24,6 @@
            class="far fa fa-list-ol"
            title="Ecrire les remarques sur le mémoire"> </a>
     {% endif %}
-
 {% endblock %}
 {% block navigation %}
 
@@ -33,15 +32,7 @@
 {% endblock %}
 
 {% block body %}
-    {% for attribution in equipe.attributions %}
-        {% if attribution.estLecteur=='1' or attribution.estLecteur=='2' %}
 
-            {{ attribution.jure.prenomJure }} {{ attribution.jure.nomJure }}
-            {% if attribution.estLecteur=='1' %} (L) {% endif %}
-            {% if attribution.estLecteur=='2' %} (R) {% endif %}
-            <br>
-        {% endif %}
-    {% endfor %}
     {{ include ("cyberjury/form.html.twig") }}
 {% endblock %}
 {% block pied_de_page %}
